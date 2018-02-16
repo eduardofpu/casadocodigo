@@ -53,6 +53,67 @@ Abra a classse AppWebConfiguration : e acesse os métodos de envio de email
 2. heroku : sendgrid
 3. Para testar heroku: mailtrap
 
+Exemplo:
+
+public void emailSender(JavaMailSenderImpl mailSender) {
+
+		// Plano simples heroku instalar o sendGrid no prompt verifique os dados
+		// instalado : heroku config
+		// JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+		mailSender.setHost("smtp.sendgrid.net");
+		mailSender.setUsername("app88243237@heroku.com");
+		mailSender.setPassword("mrnnta0a4369");
+		mailSender.setPort(25);
+		Properties mailProperties = new Properties();
+		mailProperties.put("mail.smtp.auth", true);
+		mailProperties.put("mail.smtp.starttls.enable", true);
+		mailSender.setJavaMailProperties(mailProperties);
+
+	}	
+
+        @Bean
+	public MailSender mailSender() {
+
+		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+	        emailSender(mailSender);
+		
+		return mailSender;
+	}
+
+
+
+
+No pacote br.com.casadocodigo.loja.controller
+  1.Na classe Pagamento controller verificar o método:
+
+private void enviaEmailCompraProduto(Usuario usuario) {
+		
+		
+		
+		SimpleMailMessage email = new SimpleMailMessage();
+		
+		//Assunto
+		email.setSubject("Compra finalizada com sucesso");
+		
+		//Para
+		//email.setTo(usuario.getEmail());
+		email.setTo("eduardo27_minotauro@hotmail.com");
+				
+		//Texto
+		email.setText("Compra aprovada com sucesso no valor de " + carrinho.getTotal());
+		
+		//Quem esta enviando o emil
+		//email.setFrom("eduardo.r.delfino@gmail.com");
+		
+		email.setFrom("eduardo.delfino@zup.com.br");
+		
+		//Enviar
+		sender.send(email);
+		
+		
+	}
+  
+
 ```
 
 ##  4 Verificando
