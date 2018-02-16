@@ -119,6 +119,40 @@ private void enviaEmailCompraProduto(Usuario usuario) {
 ##  4 Verificando
 
 ```sh
+
+1. observação se for levantar o projeto para desenvolvimento deixe o prod comentado assim como no exemplo abaixo
+caso contrário comente o dev e abilite o prod para produção
+
+No package br.com.casadocodigo.loja.conf;
+
+Na class ServletSpringMVC 
+
+@Override
+	public void onStartup(ServletContext servletContext) throws ServletException {
+		
+		
+		String dev = "dev";	
+		String prod = "prod";
+		String profiles = "spring.profiles.active";
+		
+			
+			super.onStartup(servletContext);
+			servletContext.addListener(RequestContextListener.class);
+			servletContext.setInitParameter(profiles, dev);		
+			
+			//servletContext.setInitParameter(profiles, prod);
+			
+					
+				
+	}
+	
+
+```
+
+
+##  5 Verificando
+
+```sh
 GET  http://localhost:8080/casadocodigo/produtos/form
 
 

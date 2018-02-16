@@ -57,20 +57,14 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		String prod = "prod";
 		String profiles = "spring.profiles.active";
 		
-		if(dev.equals("dev")) {
 			
 			super.onStartup(servletContext);
 			servletContext.addListener(RequestContextListener.class);
-			servletContext.setInitParameter(profiles, dev);
+			//servletContext.setInitParameter(profiles, dev);		
 			
-		}else {
-			
-			super.onStartup(servletContext);
-			servletContext.addListener(RequestContextListener.class);
 			servletContext.setInitParameter(profiles, prod);
 			
-		}
-				
+					
 				
 	}
 	

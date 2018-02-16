@@ -148,8 +148,8 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		
-		gmail(mailSender);		  
-	    //emailSender(mailSender);	
+		//gmail(mailSender);		  
+	    emailSender(mailSender);	
 		//emailTrap(mailSender);
 		return mailSender;
 
