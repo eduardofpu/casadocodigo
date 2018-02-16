@@ -1,0 +1,23 @@
+package br.com.casadocodigo.loja.conf;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+public class DataSourceConfigurationTest {
+
+	@Bean
+	@Profile("test")
+	public DataSource dataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		  dataSource.setUsername("eduardo");
+	      dataSource.setPassword("");
+	      dataSource.setUrl("jdbc:postgresql://localhost:5432/casadocodigo_test?autoReconnect=true&useSSL=false");
+	      dataSource.setDriverClassName("org.postgresql.Driver");
+		
+		return dataSource;
+	}
+	
+}
