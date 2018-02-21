@@ -5,6 +5,13 @@
 Exemplo carrinho de compras
 como criar sessão e request map
 
+Ob: modificar os parametros da configuração de email:
+
+1- Dentro dos pacotes:
+
+package br.com.casadocodigo.loja.conf;
+package br.com.casadocodigo.loja.controller;
+
 ```
 
 ## 1. Requisitos 

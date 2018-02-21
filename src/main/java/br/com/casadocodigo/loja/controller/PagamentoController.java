@@ -80,7 +80,7 @@ public class PagamentoController {
 		
 		//Para
 		//email.setTo(usuario.getEmail());
-		email.setTo("eduardo27_minotauro@hotmail.com");
+		email.setTo("exemplo.nome@hotmail.com");
 				
 		//Texto
 		email.setText("Compra aprovada com sucesso no valor de " + carrinho.getTotal());
@@ -88,7 +88,7 @@ public class PagamentoController {
 		//Quem esta enviando o emil
 		//email.setFrom("eduardo.r.delfino@gmail.com");
 		
-		email.setFrom("eduardo.delfino@zup.com.br");
+		email.setFrom("exemplonomeemail@gmail.com");
 		
 		//Enviar
 		sender.send(email);
