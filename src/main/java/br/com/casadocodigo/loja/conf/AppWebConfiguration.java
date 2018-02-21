@@ -161,8 +161,8 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		// Envio para o gmail e dev
 		// JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost("smtp.gmail.com");
-		mailSender.setUsername("eduardo.r.delfino@gmail.com");
-		mailSender.setPassword("@javaoito@");
+		mailSender.setUsername("nome.exemplo@gmail.com");
+		mailSender.setPassword("senha");
 		mailSender.setPort(587);
 		Properties mailProperties = new Properties();
 		mailProperties.put("mail.smtp.auth", true);
